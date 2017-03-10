@@ -34,6 +34,9 @@ fbs_compiler_srcs = fbs_lib_srcs + [
 cc_binary(
     name       = 'flatc',
     srcs       = fbs_compiler_srcs,
+# \TODO(luke.peterson): Figure out why copts doesn't work but includes does
+# copts is the preferred approach but for some reason when using
+# new_http_archive the include paths do not work correctly.
 #    copts      = ['-Iinclude', '-Igrpc'],
     includes   = ['include', 'grpc'],
     visibility = ['//visibility:public'],

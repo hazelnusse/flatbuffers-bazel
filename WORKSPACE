@@ -11,7 +11,7 @@ new_http_archive(
     # This version of flatbuffers has the invalid symlink fixed but bazel
     # still has issues with the symlink and complains of it pointing to a file
     # that is outside of the zip archive
-    url = 'https://github.com/hazelnusse/flatbuffers/archive/remove_symlink.zip',
+    urls = ['https://github.com/hazelnusse/flatbuffers/archive/remove_symlink.zip'],
     sha256 = '1188d3089629b645140e4d2abb91df1b685fb02c650eb427c77b52568fa2742b',
     strip_prefix = 'flatbuffers-remove_symlink',
     build_file = 'BUILD.flatbuffers',
