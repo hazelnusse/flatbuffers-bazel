@@ -1,5 +1,6 @@
 def _impl(ctx):
-    args = ["--cpp"] + [f.path for f in ctx.files.srcs]
+    args = ["--cpp"] + ["-o", ctx.outputs.out.dirname] + [f.path for f in ctx.files.srcs]
+
     ctx.action(
         inputs=ctx.files.srcs,
         outputs=[ctx.outputs.out],
